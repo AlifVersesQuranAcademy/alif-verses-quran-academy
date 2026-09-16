@@ -817,14 +817,21 @@
       </div>
 
       <div class="form-group">
-        <label for="courseSelect">Aap Kiya Karna Chahty Hain?</label>
-        <select id="courseSelect">
-          <option value="">-- Select Course --</option>
-          <option value="nazra">Nazra with Tajweed</option>
-          <option value="dua_namaz">Masnoon Dua & Namaz</option>
-          <option value="hadees">40 Hadeese (Per Hour)</option>
-          <option value="tafseer">Trjma Tafseer (Per Hour)</option>
-        </select>
+        <div class="form-group">
+  <label for="courseSelect">Choose Your Quran Learning Program</label>
+
+  <select id="courseSelect">
+    <option value="">-- Select Your Course --</option>
+    <option value="nazra">Nazra Quran with Tajweed</option>
+    <option value="dua_namaz">Masnoon Duas & Namaz</option>
+    <option value="hadees">40 Ahadees</option>
+    <option value="tafseer">Tarjuma & Tafseer</option>
+  </select>
+
+  <div class="error-msg" id="err-course">
+    Please select a course option
+  </div>
+</div>
         <div class="error-msg" id="err-course">Please select a course option</div>
       </div>
 
