@@ -999,31 +999,49 @@
     /* =========================================================
        FORM VALIDATIONS
     ========================================================= */
-    function validateForm(e) {
-      e.preventDefault();
-      let isValid = true;
+   function validateForm(e) {
+    let isValid = true;
 
-      const firstName = document.getElementById('firstName').value.trim();
-      const lastName = document.getElementById('lastName').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const course = document.getElementById('courseSelect').value;
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const course = document.getElementById('courseSelect').value;
 
-      document.querySelectorAll('#enrollForm .error-msg').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('#enrollForm .error-msg').forEach(el => el.style.display = 'none');
 
-      if (!firstName) { document.getElementById('err-firstName').style.display = 'block'; isValid = false; }
-      if (!lastName) { document.getElementById('err-lastName').style.display = 'block'; isValid = false; }
-      if (!email || !email.includes('@') || !email.includes('.')) { document.getElementById('err-email').style.display = 'block'; isValid = false; }
-      if (!phone || phone.length < 8) { document.getElementById('err-phone').style.display = 'block'; isValid = false; }
-      if (!course) { document.getElementById('err-course').style.display = 'block'; isValid = false; }
-
-      if (isValid) {
-        alert('Admission application submitted successfully!');
-        document.getElementById('enrollForm').reset();
-      }
-      return isValid;
+    if (!firstName) {
+        document.getElementById('err-firstName').style.display = 'block';
+        isValid = false;
     }
 
+    if (!lastName) {
+        document.getElementById('err-lastName').style.display = 'block';
+        isValid = false;
+    }
+
+    if (!email || !email.includes('@') || !email.includes('.')) {
+        document.getElementById('err-email').style.display = 'block';
+        isValid = false;
+    }
+
+    if (!phone || phone.length < 8) {
+        document.getElementById('err-phone').style.display = 'block';
+        isValid = false;
+    }
+
+    if (!course) {
+        document.getElementById('err-course').style.display = 'block';
+        isValid = false;
+    }
+
+    if (!isValid) {
+        e.preventDefault();
+        return false;
+    }
+
+    return true;
+}
     function handleContactSubmit(e) {
       e.preventDefault();
       let isValid = true;
